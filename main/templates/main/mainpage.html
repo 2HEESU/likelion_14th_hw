@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="page-container">
+        <img src="{% static 'images/images.jpg' %}" alt="사진" width="150px">
+        <p class="tag">LikeLion_14th_session</p>
+        <h1 class="title">2026 멋쟁이사자처럼 {{generation}}기</h1>
+        <h6 class="welcome">2주차 세션 요약 과제에 오신 것을 환영합니다!</h6>
+
+        <div class="section">
+            <div class="section-title">📱 {{topic1.title}} 📱</div>
+            <ul>
+                {% for line in topic1.content %}
+                    <li>{{line}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title">📂 {{topic2.title}} 📂</div>
+            <ul>
+                {% for line in topic2.content %}
+                    <li>{{line}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🔗 {{topic3.title}} 🔗</div>
+            <ul>
+                {% for line in topic3.content %}
+                    <li>{{line}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🧩 {{topic4.title}} 🧩</div>
+            <ul>
+                {% for line in topic4.content %}
+                    <li>{{line}}</li>
+                {% endfor %}
+            </ul>
+        </div> 
+
+        <div class="section">
+            <div class="section-title">🖼️ {{topic5.title}} 🖼️</div>
+            <ul>
+                {% for line in topic5.content %}
+                    <li>{{line}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

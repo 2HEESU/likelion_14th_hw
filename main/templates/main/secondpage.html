@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="page-container">
+        <p class="tag">LikeLion_14th_session</p>
+        <h1 class="title">2026 멋쟁이사자처럼 14기</h1>
+        <h6 class="welcome">{{name}}에 대해 알아보자</h6>
+
+        <div class="section">
+            <div class="section-title">이름 {{name}}</div>
+            <ul>
+                <li>나이: {{age}}</li>
+                <li>학과: {{major}}</li>
+                <li>MBTI: {{mbti}}</li>
+                <li>추구미: {{lookalike}}</li>
+                <li>취미: 
+                    <ul>
+                        {% for hobby in hobbies %}
+                            <li>{{hobby}}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {{aspiration}}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

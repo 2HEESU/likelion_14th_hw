@@ -1,8 +1,15 @@
 <nav class="navbar-container">
-        <!-- mainpage 링크 연결 -->
-        <a class="navbar-link" href="{% url 'mainpage' %}">DGU_likelion_14th</a>
-        <!-- secondpage 링크 연결 -->
-        <a class="navbar-link" href="{% url 'secondpage' %}">Second Page</a>
-        <a class="navbar-link" href="{% url 'main:postpage' %}">게시판</a>
-        <a class="navbar-link" href="{% url 'main:new_post' %}">게시글 쓰기</a>
-    </nav>
+    <a class="navbar-link" href="{% url 'main:mainpage' %}">DGU_likelion_14th</a>
+    <a class="navbar-link" href="{% url 'secondpage' %}">Second Page</a>
+    <a class="navbar-link" href="{% url 'main:postpage' %}">게시판</a>
+    <a class="navbar-link" href="{% url 'main:new_post' %}">게시글</a>
+
+    {% if user.is_authenticated %}
+        <span class="navbar-link">{{ user.username }}님 안녕하세요!</span>
+        <a class="navbar-link" href="{% url 'accounts:logout' %}">로그아웃</a>
+        <a class="navbar-link" href="{% url 'users:mypage' request.user.id %}">마이페이지</a>
+    {% else %}
+        <a class="navbar-link" href="{% url 'accounts:login' %}">로그인</a>
+        <a class="navbar-link" href="{% url 'accounts:signup' %}">회원가입</a>
+    {% endif %}
+</nav>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="form-wrapper">
+    <form action="{% url 'main:comment_update' comment.id%}" method="POST">
+        {% csrf_token %}
+        <div class="form-title">댓글 수정</div>
+
+        <div class="form-group">
+            <label for="content">내용</label>
+            <textarea id="content" name="content" required>{{ comment.content }}</textarea>
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="writer">작성자</label>
+            <input type="text" id="writer" name="writer" value="{{ post.writer }}" required>
+        </div> -->
+
+        <button type="submit">댓글 수정</button>
+    </form>
+</div>
+{% endblock %}

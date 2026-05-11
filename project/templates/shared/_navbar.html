@@ -12,4 +12,10 @@
         <a class="navbar-link" href="{% url 'accounts:login' %}">로그인</a>
         <a class="navbar-link" href="{% url 'accounts:signup' %}">회원가입</a>
     {% endif %}
+
+    <div class="nav-item {% if request.resolver_match.url_name == 'tag_list' or request.resolver_match.url_name == 'tag_blog_list' %}active{% endif %}">
+        <a class="nav-item" href="{% url 'main:tag_list' %}">
+            <span class="nav-label">태그</span>
+        </a>
+    </div>
 </nav>
